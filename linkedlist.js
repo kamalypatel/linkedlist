@@ -84,5 +84,26 @@ function linkedList () {
         return current.getName()
     }
 
-    return {append, prepend, size, headFinder, tailFinder, at}
+    const pop = () => {
+        if (!head) {
+            return null
+        }
+
+        if (!head.getNextNode()) {
+            const value = head.getName()
+            head = null
+            return value
+        }
+
+        let current = head
+        while (current.getNextNode().getNextNode()){
+            current = current.getNextNode()
+        }
+
+        const value = current.getNextNode().getName()
+        current.setNextNode(null)
+        return value
+    }
+
+    return {append, prepend, size, headFinder, tailFinder, at, pop}
 }
