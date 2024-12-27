@@ -59,5 +59,18 @@ function linkedList () {
 
     const headFinder = () => head
 
-    return {append, prepend, size, headFinder}
+    const tailFinder = () => {
+
+        if (!head) {
+            return null
+        }
+
+        let current = head
+        while(current.getNextNode()) {
+            current = current.getNextNode()
+        }
+        return current
+    }
+
+    return {append, prepend, size, headFinder, tailFinder}
 }
