@@ -57,5 +57,7 @@ function linkedList () {
         return counter
     }
 
-    return {append, prepend, size}
+    const headFinder = () => head
+
+    return {append, prepend, size, headFinder}
 }
