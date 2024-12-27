@@ -42,5 +42,20 @@ function linkedList () {
         head = newNode
     }
 
-    return {append, prepend}
+    const size = () => {
+
+        if (!head) {
+            return 0
+        }
+
+        let current = head
+        let counter = 1
+        while(current.getNextNode()) {
+            counter++
+            current = current.getNextNode()
+        }
+        return counter
+    }
+
+    return {append, prepend, size}
 }
