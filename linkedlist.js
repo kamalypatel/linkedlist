@@ -72,5 +72,17 @@ function linkedList () {
         return current
     }
 
-    return {append, prepend, size, headFinder, tailFinder}
+    const at = (index) => {
+        if (!head) {
+            return null
+        }
+
+        let current = head
+        for (let i = 0; i < index; i++) {
+            current = current.getNextNode()
+        }
+        return current.getName()
+    }
+
+    return {append, prepend, size, headFinder, tailFinder, at}
 }
