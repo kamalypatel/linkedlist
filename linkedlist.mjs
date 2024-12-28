@@ -1,3 +1,5 @@
+export { node, linkedList }
+
 function node (value = null) {
     let name = value
     let nextNode = null
@@ -154,14 +156,12 @@ function linkedList () {
                 string = `( ${current.getName()} )`
             } else if (current.getName() != null) {
                 string = string + ` -> ( ${current.getName()} )`
-            } else {
-                string = string + ` -> null`
             }
 
             current = current.getNextNode()
         }
 
-        return string
+        return string + ` -> null`
     }
 
     return {append, prepend, size, headFinder, tailFinder, at, pop, contains, find, toString}
