@@ -141,5 +141,28 @@ function linkedList () {
 
     }
 
-    return {append, prepend, size, headFinder, tailFinder, at, pop, contains, find}
+    const toString = () => {
+        if (!head) {
+            return null
+        }
+
+        let string = ''
+
+        let current = head
+        while (current) {
+            if (current.getName() == head.getName()) {
+                string = `( ${current.getName()} )`
+            } else if (current.getName() != null) {
+                string = string + ` -> ( ${current.getName()} )`
+            } else {
+                string = string + ` -> null`
+            }
+
+            current = current.getNextNode()
+        }
+
+        return string
+    }
+
+    return {append, prepend, size, headFinder, tailFinder, at, pop, contains, find, toString}
 }
