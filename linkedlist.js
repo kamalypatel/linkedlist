@@ -105,5 +105,22 @@ function linkedList () {
         return value
     }
 
-    return {append, prepend, size, headFinder, tailFinder, at, pop}
+    const contains = (value) => {
+        if (!head) {
+            return null
+        }
+
+        let current = head
+        while(current) {
+            if (current.getName() == value) {
+                return true
+            }
+            current = current.getNextNode()
+        }
+
+        return false
+
+    }
+
+    return {append, prepend, size, headFinder, tailFinder, at, pop, contains}
 }
