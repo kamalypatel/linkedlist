@@ -122,5 +122,24 @@ function linkedList () {
 
     }
 
-    return {append, prepend, size, headFinder, tailFinder, at, pop, contains}
+    const find = (value) => {
+        if (!head) {
+            return null
+        }
+
+        let current = head
+        let counter = 0
+        while(current) {
+            if (current.getName() == value) {
+                return counter
+            }
+            current = current.getNextNode()
+            counter++
+        }
+
+        return null
+
+    }
+
+    return {append, prepend, size, headFinder, tailFinder, at, pop, contains, find}
 }
